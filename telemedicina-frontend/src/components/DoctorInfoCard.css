@@ -1,0 +1,58 @@
+/* src/components/DoctorInfoCard.css (ЖАҢЫ ФАЙЛ) */
+
+.doctor-info-card {
+    background-color: white;
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    width: 280px;
+    flex-shrink: 0; /* Бул карточканын кысылып калбашы үчүн маанилүү */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-info-photo-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.doctor-info-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-info-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a4d;
+    margin: 0 0 8px 0;
+}
+
+.doctor-info-specialty {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0 0 20px 0;
+}
+
+.details-btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.details-btn:hover {
+    background-color: #0056b3;
+}

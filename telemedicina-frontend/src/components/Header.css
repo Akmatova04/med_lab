@@ -1,0 +1,155 @@
+/* src/components/Header.css */
+
+/* --- Фонду жылдырбоо үчүн глобалдык стиль --- */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* --- Негизги хедердин стилдери --- */
+
+.header {
+  background-color: #ffffff;
+  padding: 0.1rem 0; /* Боштук азайтылды (болжол менен 10px) */
+  border-bottom: 1px solid #e9ecef;
+  width: 100%;
+}
+
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+/* --- Чоң экрандар үчүн навигация --- */
+.nav-list { display: flex; list-style: none; gap: 15px; }
+.nav-list a { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #555; font-size: 16px; font-weight: 500; padding: 10px 15px; border-radius: 10px; transition: all 0.3s ease; }
+.nav-list a:hover { background-color: #f0f2f5; color: #0d6efd; }
+.nav-list a svg { width: 20px; height: 20px; stroke: #888; transition: stroke 0.3s ease; }
+.nav-list a:hover svg { stroke: #0d6efd; }
+.nav-buttons { display: flex; gap: 12px; }
+.btn { padding: 10px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; transition: all 0.2s ease-in-out; }
+.btn-secondary { background-color: #f8f9fa; color: #343a40; border: 1px solid #dee2e6; }
+.btn-secondary:hover { background-color: #e9ecef; }
+.btn-primary { background-color: #0d6efd; color: white; }
+.btn-primary:hover { background-color: #0b5ed7; }
+
+
+/* --- Бургер-меню баскычы --- */
+.menu-toggle {
+  display: center; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 100px;
+  color: #333;
+}
+
+/* --- Жылмыш чыгуучу менюнун стилдери --- */
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  visibility: hidden;
+  pointer-events: none;
+}
+.mobile-menu-container.open {
+  visibility: visible;
+  pointer-events: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu-container.open .overlay {
+  opacity: 1;
+}
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu-container.open .mobile-menu-panel {
+  transform: translateX(0);
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+.panel-header .logo { font-size: 24px; }
+.close-btn { background: none; border: none; color: #333; padding: 5px; cursor: pointer; }
+.panel-body {
+  flex-grow: 1;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.panel-body a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  border-bottom: 1px solid #f0f2f5;
+}
+.panel-body a:first-of-type {
+  border-top: 1px solid #f0f2f5;
+}
+.panel-body a svg { stroke: #555; }
+.panel-footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panel-footer .btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+}
+
+
+/* --- АДАПТИВДҮҮЛҮК (RESPONSIVENESS) --- */
+@media (max-width: 992px) {
+  .nav-list, .nav-buttons {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
